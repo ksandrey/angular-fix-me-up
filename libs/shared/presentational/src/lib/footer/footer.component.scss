@@ -1,10 +1,11 @@
 @use "theme";
+@import "theme";
 
 section {
   height: 40px;
   background: theme.$brand-bg-alt;
   color: white;
-  padding-right: theme.$brand-padding;
+  //padding-right: theme.$brand-padding;
   padding-left: theme.$brand-padding;
   display: flex;
   align-items: center;
@@ -16,7 +17,8 @@ section {
 .nav-offsite {
   a {
     // TODO: 13. something's off with this include
-    // @include link();
+    @include link();
     color: white;
+
   }
 }
