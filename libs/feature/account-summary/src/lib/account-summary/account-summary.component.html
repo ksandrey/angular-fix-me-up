@@ -1,23 +1,29 @@
-<h1>Account Summary</h1>
+<!--h1>Account Summary</h1-->
 <!-- TODO: 6. Angular ngFor -->
 <!-- TODO: 7. Accessibility -->
 <!-- TODO: 8. Semantic HTML -->
 <table>
+  <caption><h1>Account Summary</h1></caption>
   <tr>
     <th scope="col">Account Name</th>
     <th scope="col">Balance</th>
     <th scope="col">
       <label>Account Type</label>
-      <select [(ngModel)]="accountsFilter">
+      <select [(ngModel)]="accountsFilter" (change)="filterAccounts()">
         <option value="">None</option>
         <option value="cad">CAD</option>
         <option value="usd">USD</option>
       </select>
     </th>
   </tr>
-  <tr *ngFor="let account of filterAccounts(accounts)">
-    <th>{{account.id}}</th>
+  <!--tr *ngFor="let account of filterAccounts(accounts); trackBy: trackByFn"-->
+  <tr *ngFor="let account of accounts; trackBy: trackByFn">
+    <td class="acount_id">{{account.id}}</td>
     <td>{{account.balance}}</td>
     <td>{{account.currency}}</td>
   </tr>
 </table>
+<!--
+{{accounts |json}} <br/>
+{{accountsFilter }}
+-->
