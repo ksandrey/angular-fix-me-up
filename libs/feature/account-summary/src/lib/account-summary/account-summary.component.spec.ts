@@ -22,9 +22,10 @@ describe('AccountSummaryComponent', () => {
 
   it('should retrieve accounts', () => {
     expect.assertions(2);
-    expect(component.accounts$).toBeTruthy();
-    component.accounts$.subscribe(acc => {
-      expect(acc.length).toBe(4);
-    });
+    expect(component.accounts).toBeTruthy();
+    // component.accounts$.subscribe(acc => {
+    //   expect(acc.length).toBe(3);
+    // });
+    expect(component.accounts.length).toBe(3);
   });
 });
